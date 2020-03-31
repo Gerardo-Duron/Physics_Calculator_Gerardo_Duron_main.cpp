@@ -10,6 +10,7 @@ Teacher: Dr_T 10-17-2019
 #include<string>
 #include "Input_Validation_Extended.h" 
 #include <iomanip>
+#include <stdlib.h>
 using namespace std;
 
 
