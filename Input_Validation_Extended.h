@@ -1,3 +1,8 @@
+/*
+Student: Gerardo Duron
+Teacher: Dr_T 10-17-2019
+*/
+
 //From: http://stackoverflow.com/questions/514420/how-to-validate-numeric-input-c 
 #include <ios>  // Provides ios_base::failure
 #include <iostream>  // Provides cin

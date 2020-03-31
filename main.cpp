@@ -1,6 +1,8 @@
 
-//Practice with Functions Student: yourName, Teacher: Dr_T
-//10-15-2019 updated 10-16-2019 and 3-24-2020
+/*Student: Gerardo Duron
+Teacher: Dr_T 10-17-2019
+*/
+
 #include "functions.h" //reference the header file 
 int main() 
 {
@@ -21,6 +23,7 @@ int main()
   }
   while(option != "e" && option != "E"); //DeMorgan's Law!!! 
   cout << "\nGoodbye. Hasta luego." << endl;
+
   
   return 0; 
 }

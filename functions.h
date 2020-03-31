@@ -17,10 +17,10 @@ using namespace std;
 //put prototypes here
 void handleOption(string);
 void showMenu(); 
-void Clearsceen();
+void Clearscreen();
 
 string orange = "\x1b[" + to_string(33) + ";1m"; //set color.
-
+string reset = "\x1b[" + to_string(39) + ";1m"; // reset to the white color
 
 //put definitions here
 void handleOption(string userOption)
@@ -31,7 +31,9 @@ void handleOption(string userOption)
 
     if(userOption == "A" || userOption == "a") // called function
     {
-      cout << "\nTime to calculate Velocity\n";
+      
+      cout << orange << "\nTime to calculate Velocity\n";
+      cout << reset;
       cout << "\nWhat is the displacement(d): ";
       d = validateDouble(d); // cin >> displacement;
       cout << "\nWhat is the unit of measure? ";
@@ -71,14 +73,16 @@ void handleOption(string userOption)
       string formulaOption;
       string reset = "\x1b[0m";
       string v0Unit ="", aUnit = "", s0Unit = "", sUnit = "" , vUnit = "";
-    
-      cout << "\nTime to Calculate Motion\n";
+
+      // equations for Motion    
+      cout << orange << "\nTime to Calculate Motion\n";
+      cout << reset;
       cout << "A:" << "v = v0 + at\n";
       cout << "B:" << "s = s0 + v0t + ½at2\n";
       cout << "C:" << "v^2 = v0^2 + 2a(s − s0)\n";
       cout << "D:" << "v̅ = ½(v + v0)\n\n";
-      cout << "Which Equation would you be using: ";
-      cout << orange; //color to letter choosen
+      cout << orange << "Which Equation would you be using: ";
+      cout << reset; //color to letter choosen
       formulaOption = validateString(formulaOption);
     
      if (formulaOption == "A" || formulaOption == "a")
@@ -100,7 +104,7 @@ void handleOption(string userOption)
       tUnit = validateString(tUnit);
       v=v0+a*t; // formula
       cout << fixed << setprecision(4);
-      cout << "\nThe Velocity equals: " << v << " " << v0Unit << " in " << tUnit << endl; 
+      cout << "\nThe Velocity equals: " << v << " " << v0Unit  << endl; 
       cout << reset;
       }
       
@@ -178,11 +182,11 @@ void handleOption(string userOption)
 
      else if(userOption == "D" || userOption == "d")
     {
-      double a,m,N;
+      double a,m,N;// set variables
       string mUnit,aUnit;
 
-      cout << "\nTime to calculate Newton's Second Law\n";
-      cout << "\nwhat is the mass(m): ";
+      cout << orange << "\nTime to calculate Newton's Second Law\n";
+      cout << reset << "\nwhat is the mass(m): ";
       m = validateDouble(m); // cin >> mass of object
       cout << "\nwhat is the unit of measure?: ";
       mUnit = validateString(mUnit); // cin >> unit of measure
@@ -201,13 +205,13 @@ void handleOption(string userOption)
        double m,w;
        const double g=9.80665; // set constant
       
-       cout << "\nTime to calculate Weight\n";
-       cout << "\nWhat is the mass(m): ";
+       cout << orange << "\nTime to calculate Weight\n";
+       cout << reset << "\nWhat is the mass(m): ";
        m = validateDouble(m); // cin >> mass
        cout << "\nwhat is the unit of measure?: ";
        mUnit = validateString(mUnit); // cin >> unit of measure. 
        w=(m*g);
-       cout << fixed << setprecision(4) << endl;
+       cout << fixed << setprecision(4) << endl;// set to 4 decimal places
        cout << "The Weight is: " << orange << w << " Newtons" << endl;
      }
      
@@ -228,12 +232,18 @@ void handleOption(string userOption)
        cout << "\nwhat is the direction?: ";
        dUnit = validateString(dUnit); // cin >> direction 
        p=m*v; // formula
-       cout << fixed << setprecision(4) << endl;
+       cout << fixed << setprecision(4) << endl;// four decimal places
        cout << "The Momentum is: " << orange << p << " " << mUnit << " "<< vUnit << " " << dUnit << endl; // the result printed in orange
 
-     }
+       
+       }
     
-}
+       
+  }
+void clearScreen()
+{
+  
+}  
 
 void showMenu()
 
